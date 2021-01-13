@@ -6,16 +6,8 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix" *ngFor="let book of books">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{ book.name }}</h4>
-                <p class="list-group-item-text">{{book.description}}</p>
-            </div>
-            <span class="pull-right">
-                <img src="{{book.imagePath}}" alt="" class="img-responsive" style="max-height: 50px;">
-            </span>
-        </a>
-        <app-book-item></app-book-item>
+        <app-book-item 
+        *ngFor="let bookEl of books" [book]="bookEl"></app-book-item>
     </div>
 </div>
 
