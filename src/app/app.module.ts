@@ -10,7 +10,10 @@ import { BookListComponent } from './books/book-list/book-list.component';
 import { BookItemComponent } from './books/book-list/book-item/book-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/dropdown.directive';
+import { AppRoutingModule } from './app-routing.module';
+import { BookStartComponent } from './books/book-start/book-start.component';
+import { DropdownDirective } from './shared/directives/dropdown.directive';
+import { BookEditComponent } from './books/book-edit/book-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,14 @@ import { DropdownDirective } from './shared/dropdown.directive';
     BookItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective
+    BookStartComponent,
+    DropdownDirective,
+    BookEditComponent 
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
