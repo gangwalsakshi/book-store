@@ -13,4 +13,14 @@ describe('BookService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should call getBooks and return books', ()=>{
+    expect(service.getBooks).toString();
+  });
+
+  
+  it('should call getBook and return books', ()=>{
+    expect(service.getBook).toString();
+  });
+
 });

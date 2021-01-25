@@ -1,14 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookEditComponent } from './book-edit.component';
+import { RouterTestingModule} from '@angular/router/testing';
+import { Router } from '@angular/router';
 
 describe('BookEditComponent', () => {
   let component: BookEditComponent;
   let fixture: ComponentFixture<BookEditComponent>;
+  let router : Router;
+  
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookEditComponent ]
+      declarations: [ BookEditComponent ],
+      imports:[RouterTestingModule]
     })
     .compileComponents();
   });
@@ -16,6 +21,7 @@ describe('BookEditComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BookEditComponent);
     component = fixture.componentInstance;
+    router= TestBed.inject(Router);
     fixture.detectChanges();
   });
 

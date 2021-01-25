@@ -31,5 +31,4 @@ export class BookDetailsComponent implements OnInit {
     this.router.navigate(['edit'], {relativeTo:this.route});
    }
 
-  
 }

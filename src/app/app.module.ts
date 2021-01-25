@@ -27,7 +27,7 @@ import { BookEditComponent } from './books/book-edit/book-edit.component';
     ShoppingEditComponent,
     BookStartComponent,
     DropdownDirective,
-    BookEditComponent 
+    BookEditComponent,
   ],
   imports: [
     BrowserModule,
