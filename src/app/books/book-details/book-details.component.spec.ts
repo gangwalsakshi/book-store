@@ -40,4 +40,20 @@ describe('BookDetailsComponent', () => {
     expect(router.navigate).toHaveBeenCalled();
   });
 
+  it('should display book name',()=>{
+    let compiled= fixture.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain(component.book.name);
+  });
+
+  it('should display book description',()=>{
+    let compiled= fixture.nativeElement;
+    expect(compiled.querySelector('p').textContent).toContain(component.book.description);
+  });
+
+  it('should display book image',()=>{
+    let compiled= fixture.nativeElement;
+    expect(compiled.querySelector('div.col-xs-12>img').src).toContain(component.book.imagePath);
+  });
+
+
 });

@@ -29,4 +29,21 @@ describe('BookItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display book name',()=>{
+    let compiled= fixture.nativeElement;
+    expect(compiled.querySelector('h4').textContent).toContain(component.book.name);
+  });
+
+  it('should display book description',()=>{
+    let compiled= fixture.nativeElement;
+    expect(compiled.querySelector('p').textContent).toContain(component.book.description);
+  });
+
+  it('should display book image',()=>{
+    let compiled= fixture.nativeElement;
+    expect(compiled.querySelector('img').src).toContain(component.book.imagePath);
+  });
+
+
 });

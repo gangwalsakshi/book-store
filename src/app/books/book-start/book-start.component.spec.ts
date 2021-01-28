@@ -22,4 +22,10 @@ describe('BookStartComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display book start',()=>{
+    let compiled= fixture.nativeElement;
+    expect(compiled.querySelector('h3').textContent).toBe("Please select a Book");
+  });
+
 });

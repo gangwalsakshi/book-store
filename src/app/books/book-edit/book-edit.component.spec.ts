@@ -28,4 +28,10 @@ describe('BookEditComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display book edit',()=>{
+    let compiled= fixture.nativeElement;
+    expect(compiled.querySelector('p').textContent).toEqual('book-edit works!');
+  });
+
 });

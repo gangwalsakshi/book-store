@@ -22,4 +22,10 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display Book Store',()=>{
+    let compiled= fixture.nativeElement;
+    expect(compiled.querySelector('a.navbar-brand').textContent).toBe("Book Store");
+  });
+
 });
