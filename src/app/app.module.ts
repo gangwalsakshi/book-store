@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
 import { BooksComponent } from './books/books.component';
@@ -32,7 +32,8 @@ import { BookEditComponent } from './books/book-edit/book-edit.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

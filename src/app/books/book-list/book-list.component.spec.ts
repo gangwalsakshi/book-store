@@ -35,9 +35,9 @@ describe('BookListComponent', () => {
   });
 
   
-  it('should navigate to New Recipe', ()=>{
+  it('should navigate to New Book', ()=>{
     spyOn(router,'navigate');
-    component.onNewRecipe();
+    component.onNewBook();
     expect(router.navigate).toHaveBeenCalled();
   });
 

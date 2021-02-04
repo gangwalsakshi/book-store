@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { BookService } from '../book.service';
 import { Book } from '../books.model'
 
@@ -10,17 +11,28 @@ import { Book } from '../books.model'
 })
 export class BookListComponent implements OnInit {
  books : Book[];
+ subscription: Subscription;
+
   
   constructor(private bookService: BookService, 
               private router: Router,
               private route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.books=this.bookService.getBooks()
+    this.subscription = this.bookService.booksChanged
+      .subscribe(
+        (recipes: Book[]) => {
+          this.books = recipes;
+        }
+      );
+    this.books = this.bookService.getBooks();
   }
-  onNewRecipe(){
+
+  onNewBook(){
     this.router.navigate(['new'], {relativeTo:this.route});
   }
-  
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

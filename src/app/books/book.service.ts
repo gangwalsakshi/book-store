@@ -1,11 +1,13 @@
 import {  Injectable  } from '@angular/core';
 import { Book } from 'book-store/src/app/books/books.model';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
+  booksChanged = new Subject<Book[]>();
  
  constructor() { }
  
@@ -31,6 +33,18 @@ export class BookService {
     return this.books[index];
   }
   
+  addBook(book: Book) {
+    this.books.push(book);
+    this.booksChanged.next(this.books.slice());
+  }
 
+  updateBook(index: number, newBook: Book) {
+    this.books[index] = newBook;
+    this.booksChanged.next(this.books.slice());
+  }
 
+  deleteBook(index: number) {
+    this.books.splice(index, 1);
+    this.booksChanged.next(this.books.slice());
+  }
 }
